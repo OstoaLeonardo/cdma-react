@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDMA</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="flex min-h-screen flex-row bg-gray-100 dark:bg-zinc-700">
+        <aside class="sidebar w-48 -translate-x-full transform bg-white p-4 transition-transform duration-150 ease-in md:translate-x-0 md:shadow-md dark:bg-zinc-800">
+          <div class="mb-6" id="user-container">
+            <div class="mb-6">
+              <h6 class="mb-4 text-lg font-bold dark:text-white">Usuario 1:</h6>
+              <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data:</label>
+              <input type="text" id="input-data-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="00">
+              <label for="default-input" class="block mt-3 mb-2 text-sm font-medium text-gray-900 dark:text-white">Code:</label>
+              <input type="text" id="input-code-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="0101">
+            </div>
+            <div class="mb-6">
+              <h6 class="mb-4 text-lg font-bold dark:text-white">Usuario 2:</h6>
+              <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data:</label>
+              <input type="text" id="input-data-2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="10">
+              <label for="default-input" class="block mt-3 mb-2 text-sm font-medium text-gray-900 dark:text-white">Code:</label>
+              <input type="text" id="input-code-2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="0011">
+            </div>
+            <div class="mb-6">
+              <h6 class="mb-4 text-lg font-bold dark:text-white">Usuario 3:</h6>
+              <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data:</label>
+              <input type="text" id="input-data-3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="11">
+              <label for="default-input" class="block mt-3 mb-2 text-sm font-medium text-gray-900 dark:text-white">Code:</label>
+              <input type="text" id="input-code-3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="0000">
+            </div>
+          </div>
+          <div class="mt-6">
+            <button type="button" id="btn-analyze" class="w-full text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Analizar</button>
+          </div>
+        </aside>
+        <main class="main -ml-48 flex flex-grow flex-col p-4 transition-all duration-150 ease-in md:ml-0">
+          <div class="p-10 w-full h-full inline-block items-center justify-center bg-white text-center text-5xl font-bold rounded-lg shadow-md dark:bg-zinc-800 dark:text-white">
+    
+            <h1 class="mb-14 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Resultados:</span></h1>
+            
+            <h6 class="m-6 text-lg uppercase font-bold dark:text-white">Spread the signals:</h6>
+            <div id="tables-container" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+            
+            <h6 class="m-6 text-lg uppercase font-bold dark:text-white">Voltages:</h6>
+            <div id="graphs-container" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+            
+            <h6 class="m-6 text-lg uppercase font-bold dark:text-white">Combined Signals:</h6>
+            <div id="combined-signals-container" class="flex items-center justify-center space-x-2"></div>
+            
+            <h6 class="m-6 text-lg uppercase font-bold dark:text-white">Get the data:</h6>
+            <div id="get-data-graphs-container" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4"></div>
+            <div id="get-data-container" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/scripts/script.js"></script>
+  </body>
+</html>
